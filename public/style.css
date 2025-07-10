@@ -11,6 +11,10 @@ body {
   background: var(--dark);
   color: var(--light);
   margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 header {
@@ -23,6 +27,10 @@ header {
   backdrop-filter: var(--backdrop-filters);
   position: sticky;
   top: 0;
+}
+
+main {
+  flex: 1;
 }
 
 button {
@@ -86,6 +94,7 @@ ul {
   display: flex;
   flex-wrap: wrap;
   gap: .5rem 1.5rem;
+  justify-content: space-evenly;
 }
 .message-board li {
   max-width: 40%;

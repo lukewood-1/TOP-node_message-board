@@ -8,20 +8,22 @@
 </head>
 <body>
   <%- include('header') %>
-  <h1>Post your messages, read everybody else's!</h1>
-  <div class="message-board">
-    <h2><span class='down-arrow'>↓</span> Messages <span class='down-arrow'>↓</span></h2>
-    <ul>
-      <% for(let item of messages) { %>
-        <li>
-          <h3><%= item.user %></h3>
-          <p><%= item.text %></p>
-        </li>
-      <% } %>
-    </ul>
+  <main>
+    <h1>Post your messages, read everybody else's!</h1>
+    <div class="message-board">
+      <h2><span class='down-arrow'>↓</span> Messages <span class='down-arrow'>↓</span></h2>
+      <ul>
+        <% for(let item of messages) { %>
+          <li>
+            <h3><%= item.user %></h3>
+            <p><%= item.text %></p>
+          </li>
+        <% } %>
+      </ul>
 
-    <a class='new-message-btn' href="/new">New message</a>
-  </div>
+      <a class='new-message-btn' href="/new">New message</a>
+    </div>
+  </main>
   <%- include('footer') %>
 </body>
 </html>
