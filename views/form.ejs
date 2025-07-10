@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
+  <title>New message</title>
+</head>
+<body>
+  <%- include('header') %>
+  <h2 class="msg-send">Send your message</h2>
+  <form action="/new" method="POST">
+    <div>
+      <label>
+        Author: <input type="text" name="author">
+      </label>
+    </div>
+
+    <div>
+      <label>
+        message: <input type="text" name="message">
+      </label>
+    </div>
+
+    <button type="submit">Send</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
+  <title>Message board</title>
+</head>
+<body>
+  <%- include('header') %>
+  <h1>Post your messages, read everybody else's!</h1>
+  <div class="message-board">
+    <h2><span class='down-arrow'>↓</span> Messages <span class='down-arrow'>↓</span></h2>
+    <ul>
+      <% for(let item of messages) { %>
+        <li>
+          <h3><%= item.user %></h3>
+          <p><%= item.text %></p>
+        </li>
+      <% } %>
+    </ul>
+
+    <a class='new-message-btn' href="/new">New message</a>
+  </div>
+  <%- include('footer') %>
+</body>
+</html>
