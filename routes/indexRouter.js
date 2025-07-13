@@ -1,40 +1,18 @@
-import express, { text } from 'express';
+import { Router } from 'express';
+import { homepageGet, createMessageGet, createMessagePost, deleteMessagePost } from '../controllers/dbController.js';
 
-const messages = [
-  {
-    text: "Sup, man",
-    user: 'Luke',
-    added: new Date()
-  },
-  {
-    text: "7PM at BroDude's, pizzas on me, drinks on you, I WILL get extra drunk, Brad will drive",
-    user: 'Bro from work',
-    added: new Date()
-  },
-  {
-    text: "It is working?",
-    user: 'Wood',
-    added: new Date()
-  }
-]
+const indexRouter = Router();
 
-const indexRouter = express.Router();
+indexRouter.post('/delete', deleteMessagePost);
 
-indexRouter.get('/', (req, res) => {
-  res.render('index', {title: 'Mini message board', messages: messages});
-});
+indexRouter.post('/new', createMessagePost);
 
-indexRouter.get('/new', (req, res) => {
-  res.render('form');
-});
+indexRouter.get('/new', createMessageGet);
 
-indexRouter.post('/new', (req, res) => {
-  messages.push({
-    user: req.body.author,
-    text: req.body.message,
-    date: new Date()
-  });
-  res.redirect('/');
-});
+indexRouter.get('/', homepageGet);
+
+indexRouter.use((err, req, res, next) => {
+  console.error(err)
+})
 
 export default indexRouter;

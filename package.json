@@ -2,7 +2,7 @@
   "name": "top-nodejs_messaging-board",
   "version": "1.0.0",
   "main": "app.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "test": "node --watch app.js",
     "start": "node app.js"
@@ -13,6 +13,8 @@
   "description": "",
   "dependencies": {
     "ejs": "^3.1.10",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "express-validator": "^7.2.1",
+    "pg": "^8.16.3"
   }
 }

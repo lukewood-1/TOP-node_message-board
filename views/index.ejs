@@ -15,8 +15,12 @@
       <ul>
         <% for(let item of messages) { %>
           <li>
-            <h3><%= item.user %></h3>
-            <p><%= item.text %></p>
+            <h3><%= item.author %></h3>
+            <p><%= item.message %></p>
+            <form action="/delete", method="POST" style="display: contents">
+              <input type="number" name="id" value="<%= item.id %>" style="display: none" />
+              <button type="submit" onclick="return confirm('sure about that?');">delete</button>
+            </form>
           </li>
         <% } %>
       </ul>
